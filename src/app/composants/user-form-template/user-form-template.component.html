@@ -1,0 +1,46 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <h2>template driven form</h2>
+    <!-- ID -->
+    <div>
+        <label for="id">ID :</label>
+        <input type="number" id="id" name="id" ngModel required />
+        <div *ngIf="userForm.controls['id']?.invalid && userForm.controls['id']?.touched">
+            <p>ID est requis.</p>
+        </div>
+    </div>
+
+    <!-- Nom -->
+    <div>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" ngModel required minlength="3" />
+        <div *ngIf="userForm.controls['name']?.invalid && userForm.controls['name']?.touched">
+            <p *ngIf="userForm.controls['name']?.errors?.['required']">Le nom est requis.</p>
+            <p *ngIf="userForm.controls['name']?.errors?.['minlength']">
+                Le nom doit contenir au moins 3 caractères.
+            </p>
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" ngModel required email />
+        <div *ngIf="userForm.controls['email']?.invalid && userForm.controls['email']?.touched">
+            <p *ngIf="userForm.controls['email']?.errors?.['required']">L'email est requis.</p>
+            <p *ngIf="userForm.controls['email']?.errors?.['email']">Adresse email invalide.</p>
+        </div>
+    </div>
+
+    <!-- Âge -->
+    <div>
+        <label for="age">Âge :</label>
+        <input type="number" id="age" name="age" ngModel required min="18" />
+        <div *ngIf="userForm.controls['age']?.invalid && userForm.controls['age']?.touched">
+            <p *ngIf="userForm.controls['age']?.errors?.['required']">L'âge est requis.</p>
+            <p *ngIf="userForm.controls['age']?.errors?.['min']">L'âge doit être supérieur ou égal à 18.</p>
+        </div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button type="submit" [disabled]="userForm.invalid">Ajouter un Utilisateur</button>
+</form>

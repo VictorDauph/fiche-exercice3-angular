@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let user of users">
+        <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
+    </li>
+</ul>
+
+<app-user-form-template></app-user-form-template>
+<!--
+<app-user-form-reactive></app-user-form-reactive>
+-->

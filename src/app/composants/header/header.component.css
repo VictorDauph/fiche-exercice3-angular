@@ -1,0 +1,48 @@
+header {
+    background-color: #f8f9fa;
+    /* Couleur de fond claire */
+    padding: 1rem 2rem;
+    /* Espacement autour du contenu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile pour un effet en relief */
+}
+
+nav {
+    display: flex;
+    /* Disposition en ligne */
+    justify-content: space-between;
+    /* Espacement égal entre les liens */
+    align-items: center;
+    /* Alignement vertical centré */
+}
+
+nav a {
+    text-decoration: none;
+    /* Supprime le soulignement */
+    color: #007bff;
+    /* Couleur de lien bleue */
+    font-weight: bold;
+    /* Texte en gras */
+    padding: 0.5rem 1rem;
+    /* Espacement interne pour les liens */
+    transition: color 0.3s, background-color 0.3s;
+    /* Animation des effets au survol */
+}
+
+nav a:hover {
+    color: white;
+    /* Couleur du texte au survol */
+    background-color: #007bff;
+    /* Fond bleu au survol */
+    border-radius: 5px;
+    /* Bords arrondis */
+}
+
+nav a.active {
+    color: white;
+    /* Couleur du texte pour le lien actif */
+    background-color: #0056b3;
+    /* Fond bleu plus foncé pour le lien actif */
+    border-radius: 5px;
+    /* Bords arrondis */
+}
