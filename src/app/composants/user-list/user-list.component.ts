@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserFormTemplateComponent } from "../user-form-template/user-form-template.component";
-import { UserFormReactiveComponent } from "../user-form-reactive/user-form-reactive.component";
+
 
 @Component({
   selector: 'app-user-list',
-  imports: [CommonModule, RouterLink, UserFormTemplateComponent, UserFormReactiveComponent],
+  imports: [CommonModule, RouterLink, UserFormTemplateComponent],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
