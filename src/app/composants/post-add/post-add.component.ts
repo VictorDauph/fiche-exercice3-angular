@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class PostAddComponent {
   newPost: Post = { title: '', body: '' };
-
+  apiResponse = ""
   constructor(private postService: PostService) { }
 
   onAddPost(): void {
@@ -20,7 +20,8 @@ export class PostAddComponent {
       this.postService.createPost(this.newPost).subscribe((post) => {
         console.log('Post ajouté :', post);
         // Réinitialise le formulaire
-        //this.newPost = { title: '', body: '' };
+        this.newPost = { title: '', body: '' };
+        this.apiResponse = JSON.stringify(post);
       });
     } else {
       console.log('Formulaire invalide.');

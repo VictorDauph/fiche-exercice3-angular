@@ -4,5 +4,6 @@
     <input id="title" [(ngModel)]="newPost.title" name="title" required />
     <label for="body">Contenu :</label>
     <textarea id="body" [(ngModel)]="newPost.body" name="body" required></textarea>
+    <p>{{apiResponse}}</p>
     <button type="submit">Ajouter</button>
 </form>
